@@ -59,12 +59,14 @@
     padding: 0;
 }
 
-html, body {
+html {
     height: 100%;
-    overflow: hidden;
 }
 
 body {
+    height: 100%;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
     font-family: var(--font-family);
     background: var(--color-darker);
     color: var(--color-cream);
@@ -235,7 +237,7 @@ body {
     width: 100%;
     padding: 14px 16px;
     font-family: var(--font-sans);
-    font-size: 1rem;
+    font-size: 16px; /* Voorkomt zoom op iOS */
     text-align: center;
     background: var(--color-cream);
     border: 2px solid var(--color-pink-light);
@@ -243,6 +245,9 @@ body {
     color: var(--color-text);
     outline: none;
     transition: all 0.3s;
+    touch-action: manipulation;
+    -webkit-appearance: none;
+    appearance: none;
 }
 
 .oracle-form input::placeholder {
