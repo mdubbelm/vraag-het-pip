@@ -60,18 +60,24 @@
 }
 
 html {
-    height: 100%;
+    min-height: 100%;
 }
 
 body {
-    height: 100%;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
+    min-height: 100%;
     font-family: var(--font-family);
     background: var(--color-darker);
     color: var(--color-cream);
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
+}
+
+/* PWA keyboard fix - zorgt dat pagina kan scrollen */
+@supports (-webkit-touch-callout: none) {
+    /* iOS specific */
+    body {
+        min-height: -webkit-fill-available;
+    }
 }
 
 .visually-hidden {
@@ -161,14 +167,14 @@ body {
    ========================================================================== */
 
 .login-page {
-    height: 100%;
-    height: 100dvh;
+    min-height: 100%;
+    min-height: 100dvh;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 16px;
     padding-top: calc(16px + var(--safe-top));
-    padding-bottom: calc(16px + var(--safe-bottom));
+    padding-bottom: calc(100px + var(--safe-bottom)); /* Extra ruimte voor keyboard */
 }
 
 .login-container {
