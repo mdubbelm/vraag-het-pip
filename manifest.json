@@ -2,12 +2,12 @@
     "name": "Vraag het Pip",
     "short_name": "Vraag Pip",
     "description": "Wijsheid van de liefste viervoeter - advies over liefde, werk en leven",
-    "start_url": "/index.html",
+    "start_url": "./index.html",
     "display": "standalone",
     "orientation": "portrait",
     "background_color": "#f8e8ee",
     "theme_color": "#f8e8ee",
-    "scope": "/",
+    "scope": "./",
     "icons": [
         {
             "src": "icons/icon-72.png",
