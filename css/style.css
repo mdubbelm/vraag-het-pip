@@ -523,7 +523,8 @@ body {
     position: relative;
     width: 100%;
     max-width: 340px;
-    max-height: 480px;
+    height: 480px;
+    min-height: 400px;
     background: var(--color-white);
     border: 3px solid var(--color-pink);
     border-radius: 16px;
@@ -602,11 +603,11 @@ body {
 .card-image {
     width: 100%;
     flex: 1;
-    min-height: 100px;
+    min-height: 80px;
     border-radius: 12px;
     overflow: hidden;
     border: 2px solid var(--color-pink-light);
-    margin-bottom: 12px;
+    margin-bottom: 16px;
 }
 
 .wisdom-card.liefde .card-image { border-color: var(--color-love-border); }
@@ -623,8 +624,8 @@ body {
 /* Wijsheid tekst */
 .card-wisdom {
     position: relative;
-    padding: 10px 12px;
-    min-height: 60px;
+    padding: 12px 12px;
+    min-height: 70px;
     display: flex;
     align-items: center;
     flex-shrink: 0;
@@ -819,7 +820,8 @@ body {
     }
 
     .wisdom-card {
-        max-height: 420px;
+        height: 400px;
+        min-height: 360px;
     }
 
     .wisdom-text {
@@ -835,6 +837,6 @@ body {
 @media (min-width: 640px) {
     .wisdom-card {
         max-width: 360px;
-        max-height: 520px;
+        height: 520px;
     }
 }
