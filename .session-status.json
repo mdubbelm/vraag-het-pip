@@ -1,0 +1,35 @@
+{
+  "timestamp": "2025-12-15T19:45:00Z",
+  "summary": "PWA 'Vraag het Pip' afgerond en gedeployed naar GitHub Pages. Dit is een verjaardagscadeau voor Pauline Kurris (18 december 2025) - een orakel-app met haar hond Pip die wijsheden geeft over liefde, werk en leven. Tijdens deze sessie: keyboard fixes voor PWA, kaart proportie verbeteringen, en autofocus verwijderd.",
+  "filesModified": [
+    "css/style.css - PWA keyboard fixes (min-height ipv height), kaart vaste hoogte",
+    "js/login.js - autofocus verwijderd zodat keyboard alleen bij handmatige tap verschijnt",
+    "sw.js - cache versie opgehoogd naar 1.7.0",
+    "index.html - viewport restrictions verwijderd voor keyboard support",
+    "app.html - viewport restrictions verwijderd"
+  ],
+  "nextSteps": [
+    "Eventueel verhuizen naar Netlify als foto privacy belangrijk wordt",
+    "Testen op Android device van Pauline",
+    "App presenteren op 18 december 2025"
+  ],
+  "openIssues": [
+    "GitHub repo is public - foto's van Pip zijn zichtbaar (gebruiker heeft besloten dit zo te laten)",
+    "PWA keyboard werkt nu, maar blijf alert bij toekomstige CSS wijzigingen aan height properties"
+  ],
+  "todoList": "Alle taken afgerond",
+  "projectInfo": {
+    "liveUrl": "https://mdubbelm.github.io/vraag-het-pip/",
+    "githubRepo": "https://github.com/mdubbelm/vraag-het-pip",
+    "password": "Pippeledokus!",
+    "recipient": "Pauline Kurris",
+    "giftDate": "18 december 2025",
+    "features": [
+      "3 categorieeen: Liefde, Werk, Leven",
+      "150 adviezen (50 per categorie)",
+      "24 fotos van Pip",
+      "PWA installeerbaar op Android/iOS",
+      "Info pagina met dedicatie"
+    ]
+  }
+}
