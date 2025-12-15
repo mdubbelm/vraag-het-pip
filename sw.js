@@ -3,7 +3,7 @@
  * Caching voor offline gebruik
  */
 
-const CACHE_VERSION = '1.1.0';
+const CACHE_VERSION = '1.2.0';
 const CACHE_NAME = `pip-cache-v${CACHE_VERSION}`;
 
 // Bestanden om te cachen (relatieve paden voor GitHub Pages)
