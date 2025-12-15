@@ -35,16 +35,12 @@
             // Fout wachtwoord
             errorMessage.textContent = 'Hmm, dat klopt niet. Probeer het nog eens!';
             passwordInput.value = '';
-            passwordInput.focus();
 
             // Schud animatie
             form.classList.add('shake');
             setTimeout(() => form.classList.remove('shake'), 500);
         }
     });
-
-    // Focus op password veld
-    passwordInput.focus();
 
     // Info scherm toggle
     const infoBtn = document.getElementById('info-btn');
@@ -62,6 +58,5 @@
         infoScreen.classList.add('hidden');
         loginScreen.classList.remove('hidden');
         infoBtn.classList.remove('hidden');
-        passwordInput.focus();
     });
 })();
