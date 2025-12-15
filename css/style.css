@@ -509,7 +509,7 @@ body {
    ========================================================================== */
 
 #advice-screen {
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     gap: 0;
 }
@@ -517,16 +517,16 @@ body {
 .wisdom-card {
     position: relative;
     width: 100%;
+    max-width: 340px;
+    max-height: 480px;
     background: var(--color-white);
     border: 3px solid var(--color-pink);
     border-radius: 16px;
     padding: 14px;
     box-shadow: 0 6px 24px var(--color-pink-glow);
     color: var(--color-text);
-    flex: 1;
     display: flex;
     flex-direction: column;
-    min-height: 0;
     overflow: hidden;
 }
 
@@ -597,8 +597,7 @@ body {
 .card-image {
     width: 100%;
     flex: 1;
-    min-height: 120px;
-    max-height: 280px;
+    min-height: 100px;
     border-radius: 12px;
     overflow: hidden;
     border: 2px solid var(--color-pink-light);
@@ -814,8 +813,8 @@ body {
         font-size: 1.5rem;
     }
 
-    .card-image {
-        max-height: 140px;
+    .wisdom-card {
+        max-height: 420px;
     }
 
     .wisdom-text {
@@ -830,10 +829,7 @@ body {
 /* Grotere schermen */
 @media (min-width: 640px) {
     .wisdom-card {
-        max-width: 380px;
-    }
-
-    .card-image {
-        max-height: 220px;
+        max-width: 360px;
+        max-height: 520px;
     }
 }
