@@ -1,0 +1,839 @@
+/* ==========================================================================
+   Vraag het Pip - Mystiek Orakel Design
+   ========================================================================== */
+
+:root {
+    /* Pastel kleuren */
+    --color-bg: #f8e8ee;
+    --color-bg-dark: #efd5df;
+
+    /* Roze (hoofdkleur) */
+    --color-pink: #e8a0b0;
+    --color-pink-dark: #d4849a;
+    --color-pink-light: #f5d0da;
+    --color-pink-glow: rgba(232, 160, 176, 0.4);
+
+    /* Button kleuren - donkerder voor contrast met wit */
+    --color-button-primary: #b85a78;
+    --color-button-primary-hover: #a04d68;
+
+    /* Categorie kleuren - pastel backgrounds */
+    --color-love: #f2b5c4;
+    --color-love-light: #fae8ed;
+    --color-love-dark: #a05670;
+    --color-love-border: #e8899f;
+
+    --color-work: #b5d4e8;
+    --color-work-light: #e5f0f8;
+    --color-work-dark: #4a7a9c;
+    --color-work-border: #8bbad6;
+
+    --color-life: #c4e8b5;
+    --color-life-light: #e8f5e4;
+    --color-life-dark: #4d8a3d;
+    --color-life-border: #9dd68a;
+
+    /* Neutrale tinten */
+    --color-cream: #fefaf8;
+    --color-text: #5a4a50;
+    --color-text-light: #8a7a80;
+    --color-gold: #d4b896;
+    --color-white: #ffffff;
+
+    /* Typography */
+    --font-family: 'Georgia', 'Times New Roman', serif;
+    --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+    /* Safe areas */
+    --safe-top: env(safe-area-inset-top);
+    --safe-bottom: env(safe-area-inset-bottom);
+}
+
+/* ==========================================================================
+   Reset & Base
+   ========================================================================== */
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    font-family: var(--font-family);
+    background: var(--color-darker);
+    color: var(--color-cream);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/* ==========================================================================
+   Mystieke achtergrond
+   ========================================================================== */
+
+.mystic-background {
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(180deg, var(--color-bg) 0%, var(--color-bg-dark) 100%);
+    z-index: -1;
+}
+
+.stars {
+    position: absolute;
+    inset: 0;
+    background-image:
+        radial-gradient(2px 2px at 20px 30px, var(--color-pink-light), transparent),
+        radial-gradient(3px 3px at 40px 70px, var(--color-white), transparent),
+        radial-gradient(2px 2px at 90px 40px, var(--color-pink-light), transparent),
+        radial-gradient(2px 2px at 130px 80px, var(--color-white), transparent),
+        radial-gradient(3px 3px at 160px 120px, var(--color-pink-light), transparent),
+        radial-gradient(2px 2px at 200px 50px, var(--color-white), transparent),
+        radial-gradient(2px 2px at 250px 160px, var(--color-pink-light), transparent),
+        radial-gradient(3px 3px at 300px 90px, var(--color-white), transparent),
+        radial-gradient(2px 2px at 350px 200px, var(--color-pink-light), transparent),
+        radial-gradient(2px 2px at 80px 180px, var(--color-white), transparent);
+    background-size: 400px 400px;
+    opacity: 0.6;
+}
+
+/* ==========================================================================
+   Kaart decoratieve hoeken
+   ========================================================================== */
+
+.card-corner {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    border-color: var(--color-pink);
+    border-style: solid;
+    border-width: 0;
+    opacity: 0.5;
+}
+
+.card-corner.top-left {
+    top: 12px;
+    left: 12px;
+    border-top-width: 2px;
+    border-left-width: 2px;
+}
+
+.card-corner.top-right {
+    top: 12px;
+    right: 12px;
+    border-top-width: 2px;
+    border-right-width: 2px;
+}
+
+.card-corner.bottom-left {
+    bottom: 12px;
+    left: 12px;
+    border-bottom-width: 2px;
+    border-left-width: 2px;
+}
+
+.card-corner.bottom-right {
+    bottom: 12px;
+    right: 12px;
+    border-bottom-width: 2px;
+    border-right-width: 2px;
+}
+
+/* ==========================================================================
+   LOGIN / ORACLE CARD
+   ========================================================================== */
+
+.login-page {
+    height: 100%;
+    height: 100dvh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    padding-top: calc(16px + var(--safe-top));
+    padding-bottom: calc(16px + var(--safe-bottom));
+}
+
+.login-container {
+    width: 100%;
+    max-width: 340px;
+}
+
+.oracle-card {
+    position: relative;
+    background: var(--color-white);
+    border: 2px solid var(--color-pink);
+    border-radius: 20px;
+    padding: 28px 24px;
+    text-align: center;
+    box-shadow: 0 8px 32px var(--color-pink-glow);
+}
+
+.oracle-header {
+    margin-bottom: 20px;
+}
+
+.oracle-symbol {
+    font-size: 28px;
+    color: var(--color-pink);
+    margin-bottom: 8px;
+}
+
+.oracle-card h1 {
+    font-size: 1.75rem;
+    font-weight: normal;
+    color: var(--color-text);
+    margin: 0;
+    letter-spacing: 0.02em;
+}
+
+.oracle-subtitle {
+    font-size: 0.875rem;
+    color: var(--color-text-light);
+    font-style: italic;
+    margin-top: 6px;
+}
+
+.oracle-image {
+    width: 130px;
+    height: 130px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    border: 4px solid var(--color-pink-light);
+    overflow: hidden;
+    box-shadow: 0 4px 20px var(--color-pink-glow);
+}
+
+.pip-oracle {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.oracle-form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.oracle-form input {
+    width: 100%;
+    padding: 14px 16px;
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    text-align: center;
+    background: var(--color-cream);
+    border: 2px solid var(--color-pink-light);
+    border-radius: 12px;
+    color: var(--color-text);
+    outline: none;
+    transition: all 0.3s;
+}
+
+.oracle-form input::placeholder {
+    color: var(--color-text-light);
+}
+
+.oracle-form input:focus {
+    border-color: var(--color-pink);
+    box-shadow: 0 0 0 3px var(--color-pink-glow);
+}
+
+.btn-oracle {
+    padding: 14px 24px;
+    font-family: var(--font-family);
+    font-size: 1rem;
+    background: var(--color-button-primary);
+    color: var(--color-white);
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-oracle:hover,
+.btn-oracle:focus {
+    background: var(--color-button-primary-hover);
+    box-shadow: 0 4px 16px var(--color-pink-glow);
+}
+
+.error-message {
+    color: var(--color-pink-dark);
+    font-size: 0.875rem;
+    min-height: 1.25em;
+}
+
+.oracle-hint {
+    margin-top: 16px;
+    font-size: 0.75rem;
+    color: var(--color-text-light);
+    font-style: italic;
+}
+
+/* ==========================================================================
+   INFO BUTTON & SCREEN
+   ========================================================================== */
+
+.info-btn {
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    top: calc(16px + var(--safe-top));
+    width: 40px;
+    height: 40px;
+    background: var(--color-white);
+    border: 2px solid var(--color-pink-light);
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+    z-index: 100;
+}
+
+.info-btn svg {
+    width: 22px;
+    height: 22px;
+    fill: var(--color-pink);
+}
+
+.info-btn:hover,
+.info-btn:focus {
+    border-color: var(--color-pink);
+    box-shadow: 0 2px 8px var(--color-pink-glow);
+}
+
+.hidden {
+    display: none !important;
+}
+
+.info-card {
+    text-align: center;
+}
+
+.info-content {
+    padding: 20px 0;
+}
+
+.info-symbol {
+    font-size: 2.5rem;
+    color: var(--color-pink);
+    margin-bottom: 16px;
+}
+
+.info-text {
+    font-size: 1rem;
+    color: var(--color-text-light);
+    font-style: italic;
+    margin-bottom: 8px;
+}
+
+.info-name {
+    font-size: 1.5rem;
+    font-weight: normal;
+    color: var(--color-text);
+    margin: 0 0 8px 0;
+}
+
+.info-date {
+    font-size: 1rem;
+    color: var(--color-button-primary);
+    font-weight: 500;
+}
+
+.info-paw {
+    font-size: 1.5rem;
+    margin-top: 20px;
+}
+
+/* Info card in app context */
+.app-page .info-card {
+    width: 100%;
+    max-width: none;
+}
+
+/* ==========================================================================
+   APP PAGE
+   ========================================================================== */
+
+.app-page {
+    height: 100%;
+    height: 100dvh;
+}
+
+.app-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    padding-top: calc(70px + var(--safe-top)); /* Ruimte voor info button boven */
+    padding-bottom: calc(16px + var(--safe-bottom));
+}
+
+.screen {
+    display: none;
+    flex: 1;
+    flex-direction: column;
+}
+
+.screen.active {
+    display: flex;
+}
+
+/* ==========================================================================
+   CATEGORY SCREEN
+   ========================================================================== */
+
+.screen-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 20px;
+}
+
+.app-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title-symbol {
+    font-size: 28px;
+    color: var(--color-pink);
+    margin-bottom: 8px;
+}
+
+.app-title h1 {
+    font-size: 1.75rem;
+    font-weight: normal;
+    color: var(--color-text);
+    letter-spacing: 0.02em;
+}
+
+.choose-text {
+    font-size: 1rem;
+    color: var(--color-text-light);
+    font-style: italic;
+}
+
+.category-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    max-width: 300px;
+}
+
+.btn-category {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 20px;
+    background: var(--color-white);
+    border: 2px solid var(--color-pink-light);
+    border-radius: 16px;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-align: left;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.btn-category:hover,
+.btn-category:focus {
+    border-color: var(--color-pink);
+    box-shadow: 0 4px 16px var(--color-pink-glow);
+}
+
+.category-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.category-icon svg {
+    width: 26px;
+    height: 26px;
+}
+
+.btn-category[data-category="liefde"] .category-icon {
+    color: #d4849a;
+    background: var(--color-love);
+}
+
+.btn-category[data-category="werk"] .category-icon {
+    color: #6a9bc3;
+    background: var(--color-work);
+}
+
+.btn-category[data-category="leven"] .category-icon {
+    color: #7ab37a;
+    background: var(--color-life);
+}
+
+.category-label {
+    font-family: var(--font-family);
+    font-size: 1.125rem;
+    color: var(--color-text);
+}
+
+.footer-text {
+    font-size: 0.75rem;
+    color: var(--color-text-light);
+}
+
+/* ==========================================================================
+   WISDOM CARD (Advies kaart)
+   ========================================================================== */
+
+#advice-screen {
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0;
+}
+
+.wisdom-card {
+    position: relative;
+    width: 100%;
+    background: var(--color-white);
+    border: 3px solid var(--color-pink);
+    border-radius: 16px;
+    padding: 14px;
+    box-shadow: 0 6px 24px var(--color-pink-glow);
+    color: var(--color-text);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    overflow: hidden;
+}
+
+/* Kaart kleuren per categorie */
+.wisdom-card.liefde {
+    background: var(--color-love-light);
+    border-color: var(--color-love-border);
+    box-shadow: 0 6px 24px rgba(242, 181, 196, 0.4);
+}
+
+.wisdom-card.werk {
+    background: var(--color-work-light);
+    border-color: var(--color-work-border);
+    box-shadow: 0 6px 24px rgba(181, 212, 232, 0.4);
+}
+
+.wisdom-card.leven {
+    background: var(--color-life-light);
+    border-color: var(--color-life-border);
+    box-shadow: 0 6px 24px rgba(196, 232, 181, 0.4);
+}
+
+.wisdom-card .card-corner {
+    border-color: var(--color-pink-light);
+    opacity: 0.5;
+}
+
+.wisdom-card.liefde .card-corner { border-color: var(--color-love-border); }
+.wisdom-card.werk .card-corner { border-color: var(--color-work-border); }
+.wisdom-card.leven .card-corner { border-color: var(--color-life-border); }
+
+/* Categorie badge bovenaan */
+.card-category {
+    text-align: center;
+    margin-bottom: 10px;
+    flex-shrink: 0;
+}
+
+.category-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 16px;
+    background: var(--color-pink-light);
+    border-radius: 20px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-text);
+}
+
+.category-badge.liefde { background: var(--color-love); }
+.category-badge.werk { background: var(--color-work); }
+.category-badge.leven { background: var(--color-life); }
+
+.badge-icon {
+    display: flex;
+    align-items: center;
+}
+
+.badge-icon svg {
+    width: 14px;
+    height: 14px;
+    fill: currentColor;
+}
+
+/* Pip foto */
+.card-image {
+    width: 100%;
+    flex: 1;
+    min-height: 120px;
+    max-height: 280px;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 2px solid var(--color-pink-light);
+    margin-bottom: 12px;
+}
+
+.wisdom-card.liefde .card-image { border-color: var(--color-love-border); }
+.wisdom-card.werk .card-image { border-color: var(--color-work-border); }
+.wisdom-card.leven .card-image { border-color: var(--color-life-border); }
+
+.pip-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 30%;
+}
+
+/* Wijsheid tekst */
+.card-wisdom {
+    position: relative;
+    padding: 10px 12px;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.wisdom-marks {
+    position: absolute;
+    top: -4px;
+    left: 0;
+    font-size: 2.5rem;
+    color: var(--color-pink);
+    opacity: 0.4;
+    line-height: 1;
+    font-family: Georgia, serif;
+}
+
+.wisdom-card.liefde .wisdom-marks { color: var(--color-love-dark); }
+.wisdom-card.werk .wisdom-marks { color: var(--color-work-dark); }
+.wisdom-card.leven .wisdom-marks { color: var(--color-life-dark); }
+
+.wisdom-text {
+    font-size: 1.125rem;
+    line-height: 1.5;
+    color: var(--color-text);
+    font-style: italic;
+    text-align: center;
+    width: 100%;
+}
+
+/* Handtekening */
+.card-signature {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding-top: 10px;
+    border-top: 1px solid var(--color-pink-light);
+    flex-shrink: 0;
+}
+
+.wisdom-card.liefde .card-signature { border-color: var(--color-love-border); }
+.wisdom-card.werk .card-signature { border-color: var(--color-work-border); }
+.wisdom-card.leven .card-signature { border-color: var(--color-life-border); }
+
+.paw-print {
+    width: 20px;
+    height: 20px;
+}
+
+.paw-print svg {
+    width: 100%;
+    height: 100%;
+    fill: var(--color-pink);
+}
+
+.wisdom-card.liefde .paw-print svg { fill: var(--color-love-dark); }
+.wisdom-card.werk .paw-print svg { fill: var(--color-work-dark); }
+.wisdom-card.leven .paw-print svg { fill: var(--color-life-dark); }
+
+.signature-text {
+    font-size: 1.125rem;
+    font-style: italic;
+    color: var(--color-pink-dark);
+}
+
+.wisdom-card.liefde .signature-text { color: var(--color-love-dark); }
+.wisdom-card.werk .signature-text { color: var(--color-work-dark); }
+.wisdom-card.leven .signature-text { color: var(--color-life-dark); }
+
+/* Actie buttons - sticky onderaan */
+.card-actions {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    width: 100%;
+    flex-shrink: 0;
+    padding-top: 12px;
+    margin-top: auto;
+}
+
+.btn-glow {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 14px 16px;
+    font-family: var(--font-family);
+    font-size: 1rem;
+    background: var(--color-button-primary);
+    color: var(--color-white);
+    border: 2px solid var(--color-button-primary);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-glow:hover,
+.btn-glow:focus {
+    background: var(--color-button-primary-hover);
+    border-color: var(--color-button-primary-hover);
+    box-shadow: 0 4px 16px var(--color-pink-glow);
+}
+
+.btn-ghost {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 14px 16px;
+    font-family: var(--font-family);
+    font-size: 1rem;
+    background: var(--color-cream);
+    color: var(--color-text);
+    border: 2px solid var(--color-pink-light);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-ghost:hover,
+.btn-ghost:focus {
+    border-color: var(--color-pink);
+    background: var(--color-white);
+}
+
+.btn-icon {
+    font-size: 1.1em;
+}
+
+/* ==========================================================================
+   Animaties
+   ========================================================================== */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px) scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.wisdom-card {
+    animation: fadeIn 0.4s ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* ==========================================================================
+   Focus styles (toegankelijkheid)
+   ========================================================================== */
+
+:focus {
+    outline: 2px solid var(--color-gold);
+    outline-offset: 2px;
+}
+
+:focus:not(:focus-visible) {
+    outline: none;
+}
+
+:focus-visible {
+    outline: 2px solid var(--color-gold);
+    outline-offset: 2px;
+}
+
+/* ==========================================================================
+   Kleine schermen (extra compact)
+   ========================================================================== */
+
+@media (max-height: 650px) {
+    .oracle-image {
+        width: 100px;
+        height: 100px;
+    }
+
+    .oracle-card {
+        padding: 20px 16px;
+    }
+
+    .oracle-card h1 {
+        font-size: 1.5rem;
+    }
+
+    .card-image {
+        max-height: 140px;
+    }
+
+    .wisdom-text {
+        font-size: 1rem;
+    }
+
+    .signature-text {
+        font-size: 1rem;
+    }
+}
+
+/* Grotere schermen */
+@media (min-width: 640px) {
+    .wisdom-card {
+        max-width: 380px;
+    }
+
+    .card-image {
+        max-height: 220px;
+    }
+}

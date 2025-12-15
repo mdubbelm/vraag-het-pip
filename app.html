@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="theme-color" content="#f8e8ee">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Vraag het Pip">
+
+    <title>Vraag het Pip</title>
+
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="icons/icon-180.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="icons/icon-32.png">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="app-page">
+    <div class="mystic-background">
+        <div class="stars"></div>
+    </div>
+
+    <!-- Info button -->
+    <button id="info-btn" class="info-btn" aria-label="Over deze app">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+        </svg>
+    </button>
+
+    <main class="app-container">
+        <!-- Categorie keuze scherm -->
+        <section id="category-screen" class="screen active">
+            <div class="screen-content">
+                <header class="app-title">
+                    <div class="title-symbol">✦</div>
+                    <h1>Vraag het Pip</h1>
+                </header>
+
+                <p class="choose-text">Waar wil je wijsheid over?</p>
+
+                <div class="category-buttons">
+                    <button class="btn btn-category" data-category="liefde">
+                        <span class="category-icon">
+                            <!-- Hart/bone icon -->
+                            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                            </svg>
+                        </span>
+                        <span class="category-label">Liefde</span>
+                    </button>
+
+                    <button class="btn btn-category" data-category="werk">
+                        <span class="category-icon">
+                            <!-- Botje icon -->
+                            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path d="M8.5 4A2.5 2.5 0 0 0 6 6.5c0 .56.19 1.08.5 1.5a2.5 2.5 0 0 0 0 4 2.5 2.5 0 0 0 .5 4A2.5 2.5 0 0 0 8.5 20a2.5 2.5 0 0 0 2.45-2h2.1a2.5 2.5 0 0 0 2.45 2 2.5 2.5 0 0 0 1.5-4.5 2.5 2.5 0 0 0 0-4 2.5 2.5 0 0 0-.5-5A2.5 2.5 0 0 0 15.5 4a2.5 2.5 0 0 0-2.45 2h-2.1A2.5 2.5 0 0 0 8.5 4z"/>
+                            </svg>
+                        </span>
+                        <span class="category-label">Werk</span>
+                    </button>
+
+                    <button class="btn btn-category" data-category="leven">
+                        <span class="category-icon">
+                            <!-- Pootje icon -->
+                            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path d="M8.35 3C9.53 2.83 10.78 4.12 11.14 5.9c.36 1.77-.29 3.35-1.47 3.53-1.17.18-2.43-1.11-2.8-2.89C6.5 4.76 7.17 3.18 8.35 3M15.5 3c1.17.18 1.85 1.76 1.47 3.54-.37 1.78-1.63 3.07-2.8 2.89-1.18-.18-1.83-1.76-1.47-3.53.36-1.78 1.61-3.07 2.8-2.9M3 8.5c1.11-.55 2.56.11 3.25 1.47.68 1.36.41 2.9-.7 3.45s-2.56-.11-3.25-1.47c-.68-1.36-.41-2.9.7-3.45M21 8.5c1.11.55 1.38 2.09.7 3.45-.69 1.36-2.14 2.02-3.25 1.47-1.11-.55-1.38-2.09-.7-3.45.69-1.36 2.14-2.02 3.25-1.47M12 11.5c1.93 0 3.5 1.57 3.5 3.5 0 2.21-1.57 4.5-3.5 6-1.93-1.5-3.5-3.79-3.5-6 0-1.93 1.57-3.5 3.5-3.5z"/>
+                            </svg>
+                        </span>
+                        <span class="category-label">Leven</span>
+                    </button>
+                </div>
+
+                <p class="footer-text">Pip luistert altijd 🐾</p>
+            </div>
+        </section>
+
+        <!-- Advies kaart scherm -->
+        <section id="advice-screen" class="screen">
+            <div class="wisdom-card">
+                <!-- Decoratieve hoeken -->
+                <div class="card-corner top-left"></div>
+                <div class="card-corner top-right"></div>
+                <div class="card-corner bottom-left"></div>
+                <div class="card-corner bottom-right"></div>
+
+                <!-- Categorie header -->
+                <div class="card-category" id="card-category">
+                    <span class="category-badge">
+                        <span class="badge-icon" id="badge-icon"></span>
+                        <span class="badge-text" id="badge-text">Liefde</span>
+                    </span>
+                </div>
+
+                <!-- Pip foto -->
+                <div class="card-image">
+                    <img id="pip-photo" src="" alt="Pip" class="pip-photo">
+                </div>
+
+                <!-- Advies tekst -->
+                <div class="card-wisdom">
+                    <div class="wisdom-marks">"</div>
+                    <p id="advice-text" class="wisdom-text"></p>
+                </div>
+
+                <!-- Pip signature -->
+                <div class="card-signature">
+                    <span class="paw-print">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M8.35 3C9.53 2.83 10.78 4.12 11.14 5.9c.36 1.77-.29 3.35-1.47 3.53-1.17.18-2.43-1.11-2.8-2.89C6.5 4.76 7.17 3.18 8.35 3M15.5 3c1.17.18 1.85 1.76 1.47 3.54-.37 1.78-1.63 3.07-2.8 2.89-1.18-.18-1.83-1.76-1.47-3.53.36-1.78 1.61-3.07 2.8-2.9M3 8.5c1.11-.55 2.56.11 3.25 1.47.68 1.36.41 2.9-.7 3.45s-2.56-.11-3.25-1.47c-.68-1.36-.41-2.9.7-3.45M21 8.5c1.11.55 1.38 2.09.7 3.45-.69 1.36-2.14 2.02-3.25 1.47-1.11-.55-1.38-2.09-.7-3.45.69-1.36 2.14-2.02 3.25-1.47M12 11.5c1.93 0 3.5 1.57 3.5 3.5 0 2.21-1.57 4.5-3.5 6-1.93-1.5-3.5-3.79-3.5-6 0-1.93 1.57-3.5 3.5-3.5z"/>
+                        </svg>
+                    </span>
+                    <span class="signature-text">Pip</span>
+                </div>
+            </div>
+
+            <div class="card-actions">
+                <button id="another-advice" class="btn btn-glow">
+                    <span class="btn-icon">✦</span> Nog een wijsheid
+                </button>
+                <button id="back-to-categories" class="btn btn-ghost">
+                    <span class="btn-icon">←</span> Andere vraag
+                </button>
+            </div>
+        </section>
+
+        <!-- Info scherm -->
+        <section id="info-screen" class="screen">
+            <div class="screen-content">
+                <div class="oracle-card info-card">
+                    <!-- Decoratieve hoeken -->
+                    <div class="card-corner top-left"></div>
+                    <div class="card-corner top-right"></div>
+                    <div class="card-corner bottom-left"></div>
+                    <div class="card-corner bottom-right"></div>
+
+                    <div class="info-content">
+                        <div class="info-symbol">♥</div>
+                        <p class="info-text">Met liefde gemaakt voor</p>
+                        <h2 class="info-name">Pauline Kurris</h2>
+                        <p class="info-date">18 december 2025</p>
+                        <div class="info-paw">🐾</div>
+                    </div>
+
+                    <button id="info-back-btn" class="btn btn-glow">
+                        <span class="btn-icon">←</span> Terug
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

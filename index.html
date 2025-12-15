@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="theme-color" content="#f8e8ee">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Vraag het Pip">
+
+    <title>Vraag het Pip</title>
+
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="icons/icon-180.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="icons/icon-32.png">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="login-page">
+    <div class="mystic-background">
+        <div class="stars"></div>
+        <div class="sparkles"></div>
+    </div>
+
+    <!-- Info button -->
+    <button id="info-btn" class="info-btn" aria-label="Over deze app">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+        </svg>
+    </button>
+
+    <!-- Login scherm -->
+    <main id="login-screen" class="login-container">
+        <div class="oracle-card">
+            <!-- Decoratieve hoeken -->
+            <div class="card-corner top-left"></div>
+            <div class="card-corner top-right"></div>
+            <div class="card-corner bottom-left"></div>
+            <div class="card-corner bottom-right"></div>
+
+            <div class="oracle-header">
+                <div class="oracle-symbol">✦</div>
+                <h1>Vraag het Pip</h1>
+                <p class="oracle-subtitle">~ Wijsheid van je trouwste vriend ~</p>
+            </div>
+
+            <div class="oracle-image">
+                <img src="images/pip/pip-hoodie.jpg" alt="Pip de wijze hond" class="pip-oracle">
+            </div>
+
+            <form id="login-form" class="oracle-form">
+                <label for="password" class="visually-hidden">Wachtwoord</label>
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder="✦ Spreek het wachtwoord ✦"
+                    autocomplete="current-password"
+                    required
+                >
+                <button type="submit" class="btn btn-oracle">
+                    Ontvang wijsheid
+                </button>
+                <p id="error-message" class="error-message" aria-live="polite"></p>
+            </form>
+
+            <p class="oracle-hint">Vraag het aan Pip's baasje...</p>
+        </div>
+    </main>
+
+    <!-- Info scherm -->
+    <main id="info-screen" class="login-container hidden">
+        <div class="oracle-card info-card">
+            <!-- Decoratieve hoeken -->
+            <div class="card-corner top-left"></div>
+            <div class="card-corner top-right"></div>
+            <div class="card-corner bottom-left"></div>
+            <div class="card-corner bottom-right"></div>
+
+            <div class="info-content">
+                <div class="info-symbol">♥</div>
+                <p class="info-text">Met liefde gemaakt voor</p>
+                <h2 class="info-name">Pauline Kurris</h2>
+                <p class="info-date">18 december 2025</p>
+                <div class="info-paw">🐾</div>
+            </div>
+
+            <button id="info-back-btn" class="btn btn-oracle">
+                ← Terug
+            </button>
+        </div>
+    </main>
+
+    <script src="js/login.js"></script>
+</body>
+</html>
