@@ -14,3 +14,8 @@ Fotos/
 
 # Local settings
 .claude/
+
+# Claude Code (lokaal houden)
+CLAUDE.md
+LEARNINGS.md
+.session-status.json
